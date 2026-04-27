@@ -261,11 +261,35 @@ const Index = () => {
       <section id="transparencia" className="border-y border-warning/35 bg-warning/10 px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 rounded-md border border-warning/40 bg-surface-strong p-5 shadow-warning sm:flex-row">
           <AlertTriangle className="mt-1 size-7 shrink-0 text-warning" aria-hidden="true" />
-          <div>
-            <h2 className="text-xl font-bold text-warning">Aviso de transparência: rastreador não é seguro veicular</h2>
-            <p className="mt-2 leading-7 text-muted-foreground">
-              O rastreamento é uma ferramenta de auxílio à localização e recuperação, mas não substitui seguro. O sistema não é 100% eficaz e pode sofrer interferências de criminosos, incluindo bloqueadores de sinal (Jammers), áreas sem cobertura, danos ao equipamento ou outras ações externas.
-            </p>
+          <div className="space-y-4">
+            <div>
+              <h2 className="text-xl font-bold text-warning">Transparência e responsabilidade técnica</h2>
+              <p className="mt-2 leading-7 text-muted-foreground">
+                Na Lord Tracker, entendemos que o rastreamento veicular é uma peça fundamental na estratégia de segurança e logística. Nosso foco é oferecer ferramentas de alta tecnologia que permitam controle sobre o uso do veículo, tanto para fins particulares quanto para a gestão profissional de frotas.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-foreground">Por que o Rastreamento Lord Tracker é essencial?</h3>
+              <ul className="mt-2 space-y-2 leading-7 text-muted-foreground">
+                <li><strong className="text-foreground">Gestão de comportamento:</strong> receba alertas em tempo real sobre eventos críticos, como freadas bruscas e excesso de velocidade, contribuindo para a preservação do veículo e a segurança do condutor.</li>
+                <li><strong className="text-foreground">Histórico poderoso:</strong> acesse até um ano de histórico de posições e eventos, ideal para auditorias e análise de rotas.</li>
+                <li><strong className="text-foreground">Segurança ativa:</strong> utilize cerca virtual para monitorar perímetros autorizados e bloqueio veicular para controle imediato, conforme o plano contratado.</li>
+                <li><strong className="text-foreground">Foco em resultados:</strong> conte com uma solução indispensável para otimizar custos e acompanhar a produtividade de frotas.</li>
+              </ul>
+            </div>
+
+            <div className="border-t border-warning/25 pt-4">
+              <p className="leading-7 text-muted-foreground">
+                Nossa atuação é pautada pela transparência. É fundamental que nossos clientes compreendam que o rastreamento é um serviço de monitoramento e auxílio logístico, e não uma modalidade de seguro veicular.
+              </p>
+              <p className="mt-2 leading-7 text-muted-foreground">
+                Embora nossa tecnologia seja avançada, dispositivos de rastreamento podem estar sujeitos a interferências externas, como jammers, bloqueadores de sinal por terceiros, áreas sem cobertura ou remoção física do equipamento em ações criminosas. Por esses motivos técnicos, a Lord Tracker não realiza reembolso de valores ou indenizações caso o veículo seja furtado ou roubado e não seja possível recuperá-lo.
+              </p>
+              <p className="mt-2 leading-7 text-muted-foreground">
+                O rastreamento aumenta significativamente as chances de recuperação e oferece dados valiosos para a gestão, sendo um investimento de excelente custo-benefício para quem não abre mão de estar no controle.
+              </p>
+            </div>
           </div>
         </div>
       </section>
