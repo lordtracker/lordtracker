@@ -104,7 +104,7 @@ const Index = () => {
             <img
               src={lordTrackerLogo}
               alt="Logo Lord Tracker Rastreamento Veicular"
-              className="h-12 w-auto max-w-[178px] object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-14 sm:max-w-[220px]"
+              className="h-16 w-auto max-w-[230px] object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-20 sm:max-w-[300px] lg:h-24 lg:max-w-[360px]"
             />
           </a>
 
