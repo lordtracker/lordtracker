@@ -40,14 +40,12 @@ const FAQ = () => {
       <div className="absolute inset-0 bg-location-grid opacity-60 radar-mask" aria-hidden="true" />
       <section className="relative mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-3" aria-label="Voltar para início">
-            <span className="flex size-12 items-center justify-center overflow-hidden rounded-md border border-primary/35 bg-primary/10 shadow-tech">
-              <img src={lordTrackerLogo} alt="Logo Lord Tracker" className="h-full w-full object-cover" />
-            </span>
-            <span>
-              <strong className="block">Lord Tracker</strong>
-              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">FAQ</span>
-            </span>
+          <Link to="/" className="flex items-center" aria-label="Voltar para início">
+            <img
+              src={lordTrackerLogo}
+              alt="Logo Lord Tracker Rastreamento Veicular"
+              className="h-14 w-auto max-w-[220px] object-contain transition-transform duration-300 hover:scale-[1.03]"
+            />
           </Link>
           <Button asChild variant="dark" size="sm">
             <Link to="/">
