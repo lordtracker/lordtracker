@@ -36,6 +36,7 @@ const navItems = [
   { label: "Combos", href: "#combos" },
   { label: "Frotas & Pesados", href: "#frotas" },
   { label: "Adicionais", href: "#adicionais" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 const stats = [
