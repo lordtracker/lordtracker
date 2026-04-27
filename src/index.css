@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 220 18% 10%;
     --popover-foreground: 210 30% 96%;
 
-    --primary: 199 100% 56%;
+    --primary: 59 100% 56%;
     --primary-foreground: 220 24% 6%;
 
     --secondary: 220 14% 15%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 12% 18%;
     --muted-foreground: 215 14% 68%;
 
-    --accent: 25 100% 55%;
+    --accent: 58 100% 50%;
     --accent-foreground: 220 24% 6%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,25 +34,26 @@ All colors MUST be HSL.
 
     --border: 218 16% 22%;
     --input: 218 16% 22%;
-    --ring: 199 100% 56%;
+    --ring: 59 100% 56%;
 
     --radius: 0.5rem;
 
-    --surface: 220 16% 12%;
-    --surface-strong: 220 18% 8%;
-    --surface-elevated: 220 14% 16%;
-    --warning: 25 100% 55%;
+    --surface: 220 8% 12%;
+    --surface-strong: 220 9% 7%;
+    --surface-elevated: 220 6% 17%;
+    --warning: 58 100% 50%;
     --warning-foreground: 220 24% 6%;
     --success: 153 70% 48%;
     --steel: 213 13% 55%;
-    --electric: 199 100% 56%;
-    --graphite: 220 15% 11%;
-    --hero-glow: 199 100% 56%;
-    --gradient-hero: radial-gradient(circle at 72% 20%, hsl(var(--electric) / 0.24), transparent 34%), radial-gradient(circle at 16% 16%, hsl(var(--warning) / 0.18), transparent 28%), linear-gradient(135deg, hsl(220 24% 6%) 0%, hsl(220 18% 9%) 52%, hsl(220 22% 5%) 100%);
-    --gradient-panel: linear-gradient(145deg, hsl(var(--surface-elevated) / 0.92), hsl(var(--surface) / 0.82));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --shadow-tech: 0 24px 80px -32px hsl(var(--primary) / 0.42);
-    --shadow-warning: 0 18px 50px -28px hsl(var(--accent) / 0.8);
+    --electric: 59 100% 56%;
+    --graphite: 220 7% 10%;
+    --hero-glow: 59 100% 56%;
+    --gradient-hero: radial-gradient(circle at 78% 18%, hsl(var(--primary) / 0.26), transparent 32%), radial-gradient(circle at 18% 12%, hsl(var(--primary) / 0.15), transparent 24%), linear-gradient(135deg, hsl(0 0% 2%) 0%, hsl(220 8% 8%) 48%, hsl(0 0% 0%) 100%);
+    --gradient-panel: linear-gradient(145deg, hsl(var(--surface-elevated) / 0.94), hsl(var(--surface) / 0.86));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(52 100% 44%));
+    --shadow-tech: 0 24px 80px -32px hsl(var(--primary) / 0.58);
+    --shadow-warning: 0 18px 58px -28px hsl(var(--accent) / 0.9);
+    --grid-location: linear-gradient(hsl(var(--primary) / 0.12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
 
     --sidebar-background: 0 0% 98%;
 
@@ -148,5 +149,14 @@ All colors MUST be HSL.
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .bg-location-grid {
+    background-image: var(--grid-location);
+    background-size: 42px 42px;
+  }
+
+  .radar-mask {
+    mask-image: radial-gradient(circle at center, black 0%, black 58%, transparent 72%);
   }
 }

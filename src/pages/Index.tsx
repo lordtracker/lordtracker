@@ -24,6 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519999999999";
@@ -99,8 +100,8 @@ const Index = () => {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/86 backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Navegação principal">
           <a href="#inicio" className="group flex items-center gap-3" aria-label="Lord Tracker início">
-            <span className="flex size-10 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary shadow-tech transition-transform group-hover:scale-105">
-              <Satellite className="size-5" aria-hidden="true" />
+            <span className="flex size-11 items-center justify-center overflow-hidden rounded-md border border-primary/35 bg-primary/10 shadow-tech transition-transform group-hover:scale-105">
+              <img src={lordTrackerLogo} alt="Logo Lord Tracker" className="h-full w-full object-cover" />
             </span>
             <span className="leading-none">
               <strong className="block text-base tracking-wide">Lord Tracker</strong>
@@ -147,9 +148,11 @@ const Index = () => {
       </header>
 
       <section id="inicio" className="relative min-h-[92vh] bg-hero-tech pt-28">
+        <div className="absolute inset-0 bg-location-grid opacity-70 radar-mask" aria-hidden="true" />
         <div className="absolute inset-x-0 top-16 h-px bg-accent-tech" aria-hidden="true" />
-        <div className="absolute right-[8%] top-32 hidden h-80 w-80 rounded-full border border-primary/20 lg:block" aria-hidden="true">
-          <span className="absolute left-0 right-0 top-8 h-px bg-primary/50 animate-scan" />
+        <div className="absolute right-[8%] top-32 hidden h-80 w-80 rounded-full border border-primary/25 bg-primary/5 lg:block" aria-hidden="true">
+          <span className="absolute left-0 right-0 top-8 h-px bg-primary/60 animate-scan" />
+          <span className="absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-[0_0_30px_hsl(var(--primary))]" />
         </div>
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="max-w-3xl">
@@ -159,6 +162,7 @@ const Index = () => {
             <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-7xl">
               Lord Tracker
             </h1>
+            <img src={lordTrackerLogo} alt="Lord Tracker Rastreamento Veicular" className="mt-6 max-h-28 w-auto rounded-md border border-border bg-surface/70 object-contain p-2 shadow-tech sm:max-h-36" />
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
               Tecnologia, presença local e monitoramento para carros, motos, utilitários e frotas na região de Campinas/SP.
             </p>
@@ -194,7 +198,9 @@ const Index = () => {
                 <span className="rounded-md bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">800+ online</span>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-surface-strong">
-                <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.55)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border)/0.55)_1px,transparent_1px)] bg-[size:34px_34px]" />
+                <div className="absolute inset-0 bg-location-grid opacity-80" />
+                <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20" />
+                <div className="absolute left-1/2 top-1/2 size-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25" />
                 <Route className="absolute left-[12%] top-[18%] size-20 text-accent/70" />
                 <Truck className="absolute right-[18%] top-[38%] size-12 text-primary drop-shadow" />
                 <MonitorSmartphone className="absolute bottom-[18%] left-[32%] size-14 text-foreground" />
