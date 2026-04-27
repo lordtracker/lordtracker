@@ -64,9 +64,30 @@ const trackers = [
 ];
 
 const plans = [
-  { name: "Essencial", price: "R$ 59,90", features: ["Localização", "Histórico", "Alertas básicos"] },
-  { name: "Plus", price: "R$ 79,90", features: ["Bloqueio remoto", "Cerca virtual", "Suporte prioritário"] },
-  { name: "Premium", price: "R$ 99,90", features: ["Assistência 24h", "App LordTV", "Monitoramento ampliado"] },
+  {
+    name: "Basic 4G Moto",
+    oldPrice: "R$ 49,90",
+    price: "R$ 39,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Cerca virtual", "Relatórios"],
+  },
+  {
+    name: "Pro 4G Moto",
+    oldPrice: "R$ 59,90",
+    price: "R$ 49,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Bloqueio do veículo", "Cerca virtual", "Relatórios", "Desconto em IPTV e assistência veicular"],
+  },
+  {
+    name: "Basic 4G Car",
+    oldPrice: "R$ 59,90",
+    price: "R$ 49,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Cerca virtual", "Relatórios"],
+  },
+  {
+    name: "Pró 4G Car",
+    oldPrice: "R$ 69,90",
+    price: "R$ 59,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Bloqueio do veículo", "Cerca virtual", "Relatórios", "Desconto em IPTV e assistência veicular"],
+  },
 ];
 
 const extras = [
@@ -78,6 +99,7 @@ const extras = [
 
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [quickContactOpen, setQuickContactOpen] = useState(false);
   const contactLink = useMemo(
     () =>
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -94,6 +116,18 @@ const Index = () => {
     const vehicle = String(formData.get("vehicle") ?? "").trim().slice(0, 80);
     const message = `Olá, sou ${name || "cliente"}. Telefone: ${phone || "não informado"}. Veículo/frota: ${vehicle || "não informado"}. Quero uma cotação Lord Tracker.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
+  const handleQuickContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("quickName") ?? "").trim().slice(0, 80);
+    const phone = String(formData.get("quickPhone") ?? "").trim().slice(0, 30);
+    const vehicles = String(formData.get("quickVehicles") ?? "").trim().slice(0, 40);
+    const email = String(formData.get("quickEmail") ?? "").trim().slice(0, 120);
+    const message = `Olá, quero falar com a Lord Tracker. Nome: ${name || "não informado"}. WhatsApp: ${phone || "não informado"}. Quantidade de veículos: ${vehicles || "não informado"}. E-mail: ${email || "não informado"}.`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    setQuickContactOpen(false);
   };
 
   return (
@@ -272,11 +306,14 @@ const Index = () => {
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">Combos</p>
           <h2 className="mt-3 text-3xl font-black sm:text-5xl">Planos claros para proteger sua rotina.</h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 lg:grid-cols-4">
             {plans.map((plan, index) => (
-              <article key={plan.name} className={`rounded-md border p-6 ${index === 1 ? "border-primary bg-primary/10 shadow-tech" : "border-border bg-panel-tech"}`}>
+              <article key={plan.name} className={`rounded-md border p-6 ${index === 1 || index === 3 ? "border-primary bg-primary/10 shadow-tech" : "border-border bg-panel-tech"}`}>
                 <h3 className="text-2xl font-bold">{plan.name}</h3>
-                <p className="mt-4 text-4xl font-black text-primary">{plan.price}<span className="text-sm font-medium text-muted-foreground">/mês</span></p>
+                <p className="mt-4 text-sm font-semibold text-muted-foreground">
+                  De <span className="line-through decoration-warning decoration-2">{plan.oldPrice}</span> por
+                </p>
+                <p className="mt-1 text-4xl font-black text-primary">{plan.price}<span className="text-sm font-medium text-muted-foreground">/mês</span></p>
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-muted-foreground">
@@ -284,7 +321,7 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button asChild variant={index === 1 ? "hero" : "tech"} className="mt-7 w-full">
+                <Button asChild variant={index === 1 || index === 3 ? "hero" : "tech"} className="mt-7 w-full">
                   <a href={contactLink} target="_blank" rel="noreferrer">Contratar combo</a>
                 </Button>
               </article>
@@ -369,15 +406,37 @@ const Index = () => {
         </div>
       </footer>
 
-      <a
-        href={contactLink}
-        target="_blank"
-        rel="noreferrer"
+      {quickContactOpen && (
+        <div className="fixed bottom-24 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-md border border-primary/35 bg-surface-strong p-5 shadow-tech sm:right-5">
+          <div className="mb-4 flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">WhatsApp</p>
+              <h2 className="mt-1 text-xl font-black">Atendimento rápido</h2>
+            </div>
+            <button type="button" onClick={() => setQuickContactOpen(false)} className="flex size-9 items-center justify-center rounded-md border border-border bg-secondary text-foreground" aria-label="Fechar formulário">
+              <X className="size-4" />
+            </button>
+          </div>
+          <form onSubmit={handleQuickContactSubmit} className="grid gap-3">
+            <input name="quickName" required maxLength={80} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Nome" />
+            <input name="quickPhone" required maxLength={30} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Número de WhatsApp" />
+            <input name="quickVehicles" required maxLength={40} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Quantidade de veículos" />
+            <input name="quickEmail" required type="email" maxLength={120} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="E-mail" />
+            <Button type="submit" variant="hero" className="mt-2 w-full">
+              Enviar para WhatsApp <MessageCircle />
+            </Button>
+          </form>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={() => setQuickContactOpen((open) => !open)}
         className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-md bg-accent-tech text-primary-foreground shadow-warning transition-transform hover:scale-105"
-        aria-label="Abrir WhatsApp da Lord Tracker"
+        aria-label="Abrir formulário de WhatsApp da Lord Tracker"
       >
         <MessageCircle className="size-6" />
-      </a>
+      </button>
     </main>
   );
 };
