@@ -27,7 +27,7 @@ import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import appMapImage from "@/assets/lord-tracker-app-map.png";
 import { Button } from "@/components/ui/button";
 
-const whatsappNumber = "5519999999999";
+const whatsappNumber = "5519998438210";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
