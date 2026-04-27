@@ -198,7 +198,9 @@ const Index = () => {
                 <span className="rounded-md bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">800+ online</span>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-surface-strong">
-                <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.55)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border)/0.55)_1px,transparent_1px)] bg-[size:34px_34px]" />
+                <div className="absolute inset-0 bg-location-grid opacity-80" />
+                <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20" />
+                <div className="absolute left-1/2 top-1/2 size-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25" />
                 <Route className="absolute left-[12%] top-[18%] size-20 text-accent/70" />
                 <Truck className="absolute right-[18%] top-[38%] size-12 text-primary drop-shadow" />
                 <MonitorSmartphone className="absolute bottom-[18%] left-[32%] size-14 text-foreground" />
