@@ -9,7 +9,6 @@ import {
   Clock3,
   Eye,
   Factory,
-  Headphones,
   Menu,
   MessageCircle,
   MonitorSmartphone,
@@ -91,8 +90,21 @@ const plans = [
   },
 ];
 
+const TowTruckIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4 20h15l5-7h4" />
+    <path d="M6 20v-6h8l5 6" />
+    <path d="M14 14V9h5" />
+    <path d="M19 9l-4 5" />
+    <path d="M25 13v8" />
+    <path d="M23 23h4" />
+    <circle cx="9" cy="23" r="2.5" />
+    <circle cx="19" cy="23" r="2.5" />
+  </svg>
+);
+
 const extras = [
-  { icon: Headphones, title: "Assistência 24h", text: "Apoio dedicado para emergências e suporte operacional." },
+  { icon: TowTruckIcon, title: "Assistência 24h", text: "Apoio dedicado para emergências e suporte operacional.", iconClassName: "text-warning" },
   { icon: Tv, title: "LordTV IPTV", text: "Benefício exclusivo para clientes em planos selecionados." },
   { icon: Smartphone, title: "App do Cliente", text: "Acompanhe localização, alertas e rotas direto no celular." },
   { icon: Clock3, title: "Instalação Ágil", text: "Atendimento programado para Campinas e região." },
@@ -359,7 +371,7 @@ const Index = () => {
               const Icon = item.icon;
               return (
                 <article key={item.title} className="rounded-md border border-border bg-panel-tech p-5 transition-colors hover:border-accent/50">
-                  <Icon className="mb-5 size-8 text-primary" />
+                  <Icon className={`mb-5 size-8 ${item.iconClassName ?? "text-primary"}`} />
                   <h3 className="font-bold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
                 </article>
