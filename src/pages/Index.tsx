@@ -100,14 +100,12 @@ const Index = () => {
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/86 backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Navegação principal">
-          <a href="#inicio" className="group flex items-center gap-3" aria-label="Lord Tracker início">
-            <span className="flex size-11 items-center justify-center overflow-hidden rounded-md border border-primary/35 bg-primary/10 shadow-tech transition-transform group-hover:scale-105">
-              <img src={lordTrackerLogo} alt="Logo Lord Tracker" className="h-full w-full object-cover" />
-            </span>
-            <span className="leading-none">
-              <strong className="block text-base tracking-wide">Lord Tracker</strong>
-              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Campinas/SP</span>
-            </span>
+          <a href="#inicio" className="group flex items-center" aria-label="Lord Tracker início">
+            <img
+              src={lordTrackerLogo}
+              alt="Logo Lord Tracker Rastreamento Veicular"
+              className="h-12 w-auto max-w-[178px] object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-14 sm:max-w-[220px]"
+            />
           </a>
 
           <div className="hidden items-center gap-1 lg:flex">
