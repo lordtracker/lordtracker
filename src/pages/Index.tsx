@@ -24,6 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519999999999";
