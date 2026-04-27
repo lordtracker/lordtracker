@@ -406,15 +406,37 @@ const Index = () => {
         </div>
       </footer>
 
-      <a
-        href={contactLink}
-        target="_blank"
-        rel="noreferrer"
+      {quickContactOpen && (
+        <div className="fixed bottom-24 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-md border border-primary/35 bg-surface-strong p-5 shadow-tech sm:right-5">
+          <div className="mb-4 flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">WhatsApp</p>
+              <h2 className="mt-1 text-xl font-black">Atendimento rápido</h2>
+            </div>
+            <button type="button" onClick={() => setQuickContactOpen(false)} className="flex size-9 items-center justify-center rounded-md border border-border bg-secondary text-foreground" aria-label="Fechar formulário">
+              <X className="size-4" />
+            </button>
+          </div>
+          <form onSubmit={handleQuickContactSubmit} className="grid gap-3">
+            <input name="quickName" required maxLength={80} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Nome" />
+            <input name="quickPhone" required maxLength={30} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Número de WhatsApp" />
+            <input name="quickVehicles" required maxLength={40} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="Quantidade de veículos" />
+            <input name="quickEmail" required type="email" maxLength={120} className="h-11 rounded-md border border-input bg-background px-3 text-foreground outline-none ring-offset-background transition focus:ring-2 focus:ring-ring" placeholder="E-mail" />
+            <Button type="submit" variant="hero" className="mt-2 w-full">
+              Enviar para WhatsApp <MessageCircle />
+            </Button>
+          </form>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={() => setQuickContactOpen((open) => !open)}
         className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-md bg-accent-tech text-primary-foreground shadow-warning transition-transform hover:scale-105"
-        aria-label="Abrir WhatsApp da Lord Tracker"
+        aria-label="Abrir formulário de WhatsApp da Lord Tracker"
       >
         <MessageCircle className="size-6" />
-      </a>
+      </button>
     </main>
   );
 };
