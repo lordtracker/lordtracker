@@ -64,9 +64,30 @@ const trackers = [
 ];
 
 const plans = [
-  { name: "Essencial", price: "R$ 59,90", features: ["Localização", "Histórico", "Alertas básicos"] },
-  { name: "Plus", price: "R$ 79,90", features: ["Bloqueio remoto", "Cerca virtual", "Suporte prioritário"] },
-  { name: "Premium", price: "R$ 99,90", features: ["Assistência 24h", "App LordTV", "Monitoramento ampliado"] },
+  {
+    name: "Basic 4G Moto",
+    oldPrice: "R$ 49,90",
+    price: "R$ 39,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Cerca virtual", "Relatórios"],
+  },
+  {
+    name: "Pro 4G Moto",
+    oldPrice: "R$ 59,90",
+    price: "R$ 49,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Bloqueio do veículo", "Cerca virtual", "Relatórios", "Desconto em IPTV e assistência veicular"],
+  },
+  {
+    name: "Basic 4G Car",
+    oldPrice: "R$ 59,90",
+    price: "R$ 49,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Cerca virtual", "Relatórios"],
+  },
+  {
+    name: "Pró 4G Car",
+    oldPrice: "R$ 69,90",
+    price: "R$ 59,90",
+    features: ["Rastreamento", "Telemetria", "Aplicativo", "Bloqueio do veículo", "Cerca virtual", "Relatórios", "Desconto em IPTV e assistência veicular"],
+  },
 ];
 
 const extras = [
@@ -78,6 +99,7 @@ const extras = [
 
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [quickContactOpen, setQuickContactOpen] = useState(false);
   const contactLink = useMemo(
     () =>
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -94,6 +116,18 @@ const Index = () => {
     const vehicle = String(formData.get("vehicle") ?? "").trim().slice(0, 80);
     const message = `Olá, sou ${name || "cliente"}. Telefone: ${phone || "não informado"}. Veículo/frota: ${vehicle || "não informado"}. Quero uma cotação Lord Tracker.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
+  const handleQuickContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("quickName") ?? "").trim().slice(0, 80);
+    const phone = String(formData.get("quickPhone") ?? "").trim().slice(0, 30);
+    const vehicles = String(formData.get("quickVehicles") ?? "").trim().slice(0, 40);
+    const email = String(formData.get("quickEmail") ?? "").trim().slice(0, 120);
+    const message = `Olá, quero falar com a Lord Tracker. Nome: ${name || "não informado"}. WhatsApp: ${phone || "não informado"}. Quantidade de veículos: ${vehicles || "não informado"}. E-mail: ${email || "não informado"}.`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    setQuickContactOpen(false);
   };
 
   return (
