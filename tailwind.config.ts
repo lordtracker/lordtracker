@@ -39,6 +39,19 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          strong: "hsl(var(--surface-strong))",
+          elevated: "hsl(var(--surface-elevated))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        success: "hsl(var(--success))",
+        steel: "hsl(var(--steel))",
+        electric: "hsl(var(--electric))",
+        graphite: "hsl(var(--graphite))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -64,6 +77,15 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        scan: {
+          "0%": { transform: "translateY(-120%)", opacity: "0" },
+          "15%": { opacity: "1" },
+          "100%": { transform: "translateY(620%)", opacity: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
+          "50%": { transform: "translate3d(0, -10px, 0)" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -82,6 +104,8 @@ export default {
         },
       },
       animation: {
+        scan: "scan 4.8s ease-in-out infinite",
+        float: "float 5s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
