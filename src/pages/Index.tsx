@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 
 import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
+import appMapImage from "@/assets/lord-tracker-app-map.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519999999999";
@@ -233,14 +234,12 @@ const Index = () => {
                 <span className="rounded-md bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">800+ online</span>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-surface-strong">
-                <div className="absolute inset-0 bg-location-grid opacity-80" />
-                <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20" />
-                <div className="absolute left-1/2 top-1/2 size-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25" />
-                <Route className="absolute left-[12%] top-[18%] size-20 text-accent/70" />
-                <Truck className="absolute right-[18%] top-[38%] size-12 text-primary drop-shadow" />
-                <MonitorSmartphone className="absolute bottom-[18%] left-[32%] size-14 text-foreground" />
-                <span className="absolute left-[55%] top-[18%] size-4 rounded-full bg-success shadow-[0_0_28px_hsl(var(--success))]" />
-                <span className="absolute bottom-[28%] right-[22%] size-3 rounded-full bg-accent shadow-[0_0_24px_hsl(var(--accent))]" />
+                <img
+                  src={appMapImage}
+                  alt="Mapa oficial do app Lord Tracker com veículos monitorados"
+                  className="h-full w-full object-cover object-center"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
