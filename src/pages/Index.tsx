@@ -158,10 +158,12 @@ const Index = () => {
             <p className="mb-5 inline-flex items-center gap-2 rounded-md border border-primary/30 bg-primary/10 px-3 py-2 text-sm font-medium text-primary">
               <Zap className="size-4" /> Rastreamento veicular inteligente
             </p>
-            <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-7xl">
-              Lord Tracker
-            </h1>
-            <img src={lordTrackerLogo} alt="Lord Tracker Rastreamento Veicular" className="mt-6 max-h-28 w-auto rounded-md border border-border bg-surface/70 object-contain p-2 shadow-tech sm:max-h-36" />
+            <h1 className="sr-only">Lord Tracker Rastreamento Veicular</h1>
+            <img
+              src={lordTrackerLogo}
+              alt="Lord Tracker Rastreamento Veicular"
+              className="mt-4 w-full max-w-[760px] object-contain drop-shadow-[0_0_42px_hsl(var(--primary)/0.42)]"
+            />
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
               Tecnologia, presença local e monitoramento para carros, motos, utilitários e frotas na região de Campinas/SP.
             </p>
