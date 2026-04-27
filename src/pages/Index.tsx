@@ -115,7 +115,7 @@ const Index = () => {
   const [quickContactOpen, setQuickContactOpen] = useState(false);
   const contactLink = useMemo(
     () =>
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      `https://wa.me/${5519998438210}?text=${encodeURIComponent(
         "Olá, quero conhecer os planos da Lord Tracker.",
       )}`,
     [],
@@ -128,7 +128,7 @@ const Index = () => {
     const phone = String(formData.get("phone") ?? "").trim().slice(0, 30);
     const vehicle = String(formData.get("vehicle") ?? "").trim().slice(0, 80);
     const message = `Olá, sou ${name || "cliente"}. Telefone: ${phone || "não informado"}. Veículo/frota: ${vehicle || "não informado"}. Quero uma cotação Lord Tracker.`;
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/${5519998438210}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   const handleQuickContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -139,7 +139,7 @@ const Index = () => {
     const vehicles = String(formData.get("quickVehicles") ?? "").trim().slice(0, 40);
     const email = String(formData.get("quickEmail") ?? "").trim().slice(0, 120);
     const message = `Olá, quero falar com a Lord Tracker. Nome: ${name || "não informado"}. WhatsApp: ${phone || "não informado"}. Quantidade de veículos: ${vehicles || "não informado"}. E-mail: ${email || "não informado"}.`;
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/${5519998438210}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setQuickContactOpen(false);
   };
 
