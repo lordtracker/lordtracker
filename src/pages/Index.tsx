@@ -432,10 +432,12 @@ const Index = () => {
       <button
         type="button"
         onClick={() => setQuickContactOpen((open) => !open)}
-        className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-md bg-accent-tech text-primary-foreground shadow-warning transition-transform hover:scale-105"
+        className="fixed bottom-5 right-5 z-50 flex size-16 items-center justify-center rounded-full bg-success text-primary-foreground shadow-warning transition-transform hover:scale-105"
         aria-label="Abrir formulário de WhatsApp da Lord Tracker"
       >
-        <MessageCircle className="size-6" />
+        <svg className="size-9" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M16.04 3.2A12.74 12.74 0 0 0 5.2 22.66L3.8 28.8l6.29-1.36A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 1 1-5.31 19.4l-.42-.25-3.67.79.82-3.58-.28-.44A10.42 10.42 0 0 1 16.04 5.5Zm-4.1 4.97c-.23 0-.58.09-.88.42-.3.33-1.16 1.13-1.16 2.76 0 1.63 1.19 3.2 1.35 3.43.17.22 2.29 3.67 5.68 5 .7.28 1.25.45 1.68.57.7.22 1.34.18 1.84.11.56-.08 1.73-.71 1.97-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35-.3-.15-1.73-.86-2-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.46.13-.6.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.6-.92-2.2-.24-.57-.48-.5-.67-.5h-.58Z" />
+        </svg>
       </button>
     </main>
   );
