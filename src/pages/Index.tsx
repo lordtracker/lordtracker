@@ -306,11 +306,14 @@ const Index = () => {
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">Combos</p>
           <h2 className="mt-3 text-3xl font-black sm:text-5xl">Planos claros para proteger sua rotina.</h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 lg:grid-cols-4">
             {plans.map((plan, index) => (
-              <article key={plan.name} className={`rounded-md border p-6 ${index === 1 ? "border-primary bg-primary/10 shadow-tech" : "border-border bg-panel-tech"}`}>
+              <article key={plan.name} className={`rounded-md border p-6 ${index === 1 || index === 3 ? "border-primary bg-primary/10 shadow-tech" : "border-border bg-panel-tech"}`}>
                 <h3 className="text-2xl font-bold">{plan.name}</h3>
-                <p className="mt-4 text-4xl font-black text-primary">{plan.price}<span className="text-sm font-medium text-muted-foreground">/mês</span></p>
+                <p className="mt-4 text-sm font-semibold text-muted-foreground">
+                  De <span className="line-through decoration-warning decoration-2">{plan.oldPrice}</span> por
+                </p>
+                <p className="mt-1 text-4xl font-black text-primary">{plan.price}<span className="text-sm font-medium text-muted-foreground">/mês</span></p>
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-muted-foreground">
@@ -318,7 +321,7 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button asChild variant={index === 1 ? "hero" : "tech"} className="mt-7 w-full">
+                <Button asChild variant={index === 1 || index === 3 ? "hero" : "tech"} className="mt-7 w-full">
                   <a href={contactLink} target="_blank" rel="noreferrer">Contratar combo</a>
                 </Button>
               </article>
