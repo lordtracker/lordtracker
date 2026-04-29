@@ -54,7 +54,7 @@ const trackers = [
   {
     icon: RadioTower,
     title: "Módulo Anti-Furto",
-    text: "Tecnologia para motos, carros, e veiculos pesados, com bloqueio remoto. Dispositivos de ponta with tecnlogia anti-jammer.",
+    text: "Tecnologia para motos, carros, e veículos pesados, com bloqueio remoto. Dispositivos de ponta com tecnologia anti-jammer.",
   },
   {
     icon: CircuitBoard,
