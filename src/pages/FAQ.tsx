@@ -4,7 +4,7 @@ import { AlertTriangle, ArrowLeft, CheckCircle2, HelpCircle, MessageCircle, Shie
 import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import { Button } from "@/components/ui/button";
 
-const whatsappNumber = "5519999999999";
+const whatsappNumber = "5519998438210";
 
 const faqs = [
   {
