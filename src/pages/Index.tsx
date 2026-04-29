@@ -49,12 +49,12 @@ const trackers = [
   {
     icon: Satellite,
     title: "Tracker Pro GPS/GSM",
-    text: "Rastreamento em tempo real, histórico de rotas e alertas inteligentes para uso urbano.",
+    text: "Rastreamento em tempo real, histórico de rotas , cerca virtual, alertas inteligentes para uso empresarial, e muito mais...",
   },
   {
     icon: RadioTower,
     title: "Módulo Anti-Furto",
-    text: "Tecnologia compacta para motos e carros, com bloqueio remoto conforme configuração contratada.",
+    text: "Tecnologia para motos, carros, e veiculos pesados, com bloqueio remoto. Dispositivos de ponta with tecnlogia anti-jammer.",
   },
   {
     icon: CircuitBoard,
