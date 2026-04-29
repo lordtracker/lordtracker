@@ -301,7 +301,12 @@ const Index = () => {
             <h2 className="mt-3 text-3xl font-black sm:text-5xl">Presença local, operação técnica e atendimento direto.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {["Fundada em 2022 com foco em rastreamento veicular.", "Atuação consolidada em Campinas e região metropolitana.", "Mais de 800 veículos ativos monitorados.", "Soluções para uso pessoal, empresas e veículos pesados."].map((item) => (
+            {[
+              "Desde 2022, entregamos excelência e tecnologia de ponta em rastreamento e telemetria veicular de alta precisão.",
+              "Referência consolidada em Segurança Veicular, em toda Campinas e região metropolitana.",
+              "Base de clientes robusta, com mais de 1200 veículos, sendo mais de 800 veículos, só na região de Campinas.",
+              "Soluções inteligentes e personalizadas, para atender desde veículos pessoais, até frotas pesadas de grandes empresas. "
+            ].map((item) => (
               <div key={item} className="rounded-md border border-border bg-panel-tech p-5 transition-transform hover:-translate-y-1">
                 <CheckCircle2 className="mb-4 size-6 text-primary" />
                 <p className="text-muted-foreground">{item}</p>
