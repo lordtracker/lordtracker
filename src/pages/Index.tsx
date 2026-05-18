@@ -10,6 +10,7 @@ import {
   Eye,
   Factory,
   Menu,
+  Instagram,
   MessageCircle,
   MonitorSmartphone,
   RadioTower,
@@ -31,6 +32,7 @@ import welcomePost from "@/assets/welcome-post.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
+const instagramUrl = "https://www.instagram.com/lord.tracker?igsh=dnVnNXJkYjM0NGYz";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
@@ -189,7 +191,16 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Lord Tracker"
+              className="inline-flex size-9 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary transition-colors hover:bg-primary/20 hover:text-foreground"
+            >
+              <Instagram className="size-4" />
+            </a>
             <Button asChild variant="tech" size="sm">
               <a href={contactLink} target="_blank" rel="noreferrer">
                 <MessageCircle /> WhatsApp
@@ -214,6 +225,15 @@ const Index = () => {
                   {item.label}
                 </a>
               ))}
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2 rounded-md px-3 py-3 text-sm text-primary hover:bg-secondary"
+              >
+                <Instagram className="size-4" /> Instagram @lord.tracker
+              </a>
             </div>
           </div>
         )}
@@ -510,9 +530,20 @@ const Index = () => {
       </section>
 
       <footer className="border-t border-border bg-surface-strong px-4 py-8 text-sm text-muted-foreground sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
           <p>© 2026 Lord Tracker. Rastreamento veicular em Campinas/SP.</p>
-          <a href="#transparencia" className="text-warning hover:text-accent">Leia o aviso de transparência</a>
+          <div className="flex items-center gap-4">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Lord Tracker"
+              className="inline-flex items-center gap-2 text-primary transition-colors hover:text-foreground"
+            >
+              <Instagram className="size-4" /> @lord.tracker
+            </a>
+            <a href="#transparencia" className="text-warning hover:text-accent">Leia o aviso de transparência</a>
+          </div>
         </div>
       </footer>
 
