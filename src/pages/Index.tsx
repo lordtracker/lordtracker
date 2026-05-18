@@ -530,9 +530,20 @@ const Index = () => {
       </section>
 
       <footer className="border-t border-border bg-surface-strong px-4 py-8 text-sm text-muted-foreground sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
           <p>© 2026 Lord Tracker. Rastreamento veicular em Campinas/SP.</p>
-          <a href="#transparencia" className="text-warning hover:text-accent">Leia o aviso de transparência</a>
+          <div className="flex items-center gap-4">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Lord Tracker"
+              className="inline-flex items-center gap-2 text-primary transition-colors hover:text-foreground"
+            >
+              <Instagram className="size-4" /> @lord.tracker
+            </a>
+            <a href="#transparencia" className="text-warning hover:text-accent">Leia o aviso de transparência</a>
+          </div>
         </div>
       </footer>
 
