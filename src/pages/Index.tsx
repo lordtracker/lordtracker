@@ -10,6 +10,7 @@ import {
   Eye,
   Factory,
   Menu,
+  Instagram,
   MessageCircle,
   MonitorSmartphone,
   RadioTower,
@@ -31,6 +32,7 @@ import welcomePost from "@/assets/welcome-post.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
+const instagramUrl = "https://www.instagram.com/lord.tracker?igsh=dnVnNXJkYjM0NGYz";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
