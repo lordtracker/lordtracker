@@ -191,7 +191,16 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Lord Tracker"
+              className="inline-flex size-9 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary transition-colors hover:bg-primary/20 hover:text-foreground"
+            >
+              <Instagram className="size-4" />
+            </a>
             <Button asChild variant="tech" size="sm">
               <a href={contactLink} target="_blank" rel="noreferrer">
                 <MessageCircle /> WhatsApp
