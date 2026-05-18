@@ -417,6 +417,50 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="lord-sistem" className="relative overflow-hidden border-y border-primary/30 bg-hero-tech px-4 py-20 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-location-grid opacity-40" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-md border border-primary/35 bg-primary/10 px-3 py-2 text-sm font-bold uppercase tracking-[0.22em] text-primary">
+              <Sparkles className="size-4" /> Em breve
+            </p>
+            <h2 className="mt-4 text-4xl font-black sm:text-6xl">
+              LORD <span className="text-primary">SISTEM</span>
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+              Em breve, a Lord Tracker também estará atuando no setor de <strong className="text-foreground">segurança eletrônica</strong>, com <strong className="text-foreground">monitoramento de câmeras e alarmes</strong> potencializados por <strong className="text-foreground">inteligência artificial</strong>.
+            </p>
+            <p className="mt-3 leading-7 text-muted-foreground">
+              Uma nova frente para proteger residências, comércios e empresas com a mesma tecnologia, presença local e prontidão que já são marca da Lord Tracker.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="hero" size="xl">
+                <a href={contactLink} target="_blank" rel="noreferrer">
+                  Quero ser avisado <ArrowRight />
+                </a>
+              </Button>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { icon: Video, title: "Monitoramento de câmeras", text: "Visão em tempo real com análise inteligente de eventos." },
+              { icon: ShieldAlert, title: "Alarmes integrados", text: "Detecção e resposta rápida a invasões e ocorrências." },
+              { icon: MonitorSmartphone, title: "Central com IA", text: "Algoritmos identificam comportamentos suspeitos automaticamente." },
+              { icon: Eye, title: "Vigilância 24h", text: "Acompanhamento contínuo, com registros e relatórios." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-md border border-primary/25 bg-panel-tech p-5 shadow-tech">
+                  <Icon className="mb-4 size-7 text-primary" />
+                  <h3 className="font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section id="adicionais" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">Adicionais</p>
@@ -492,6 +536,44 @@ const Index = () => {
               Enviar para WhatsApp <MessageCircle />
             </Button>
           </form>
+        </div>
+      )}
+
+      {welcomeOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Boas-vindas Lord Tracker">
+          <div className="relative w-full max-w-md overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech">
+            <button
+              type="button"
+              onClick={closeWelcome}
+              className="absolute right-3 top-3 z-10 flex size-9 items-center justify-center rounded-md border border-border bg-background/80 text-foreground backdrop-blur transition hover:bg-background"
+              aria-label="Fechar boas-vindas"
+            >
+              <X className="size-4" />
+            </button>
+            <img
+              src={welcomePost}
+              alt="Caso real: motocicleta roubada às 14:00 e recuperada às 14:13 pela equipe Lord Tracker"
+              className="block h-auto w-full object-contain"
+              loading="eager"
+            />
+            <div className="space-y-3 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Bem-vindo à Lord Tracker</p>
+              <h2 className="text-2xl font-black leading-tight">Resposta em minutos. Tecnologia que recupera.</h2>
+              <p className="text-sm leading-6 text-muted-foreground">
+                Veja como nossa equipe de pronta resposta atua para proteger seu patrimônio. Fale agora com a gente e proteja seu veículo.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button asChild variant="hero" className="flex-1">
+                  <a href={contactLink} target="_blank" rel="noreferrer" onClick={closeWelcome}>
+                    Quero proteger meu veículo <ArrowRight />
+                  </a>
+                </Button>
+                <Button variant="dark" className="flex-1" onClick={closeWelcome}>
+                  Explorar o site
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
