@@ -29,6 +29,7 @@ import {
 import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import appMapImage from "@/assets/lord-tracker-app-map.png";
 import welcomePost from "@/assets/welcome-post.png";
+import lordSistemLogo from "@/assets/lord-sistem-logo.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
@@ -444,9 +445,12 @@ const Index = () => {
             <p className="inline-flex items-center gap-2 rounded-md border border-primary/35 bg-primary/10 px-3 py-2 text-sm font-bold uppercase tracking-[0.22em] text-primary">
               <Sparkles className="size-4" /> Em breve
             </p>
-            <h2 className="mt-4 text-4xl font-black sm:text-6xl">
-              LORD <span className="text-primary">SISTEM</span>
-            </h2>
+            <h2 className="sr-only">Lord Sistem</h2>
+            <img
+              src={lordSistemLogo}
+              alt="Lord Sistem - Segurança eletrônica com inteligência artificial"
+              className="mt-4 w-full max-w-[520px] object-contain drop-shadow-[0_0_42px_hsl(var(--primary)/0.35)]"
+            />
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
               Em breve, a Lord Tracker também estará atuando no setor de <strong className="text-foreground">segurança eletrônica</strong>, com <strong className="text-foreground">monitoramento de câmeras e alarmes</strong> potencializados por <strong className="text-foreground">inteligência artificial</strong>.
             </p>
