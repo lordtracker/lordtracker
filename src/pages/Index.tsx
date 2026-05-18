@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -17,14 +17,17 @@ import {
   Satellite,
   ShieldAlert,
   Smartphone,
+  Sparkles,
   Truck,
   Tv,
+  Video,
   X,
   Zap,
 } from "lucide-react";
 
 import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import appMapImage from "@/assets/lord-tracker-app-map.png";
+import welcomePost from "@/assets/welcome-post.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
@@ -35,6 +38,7 @@ const navItems = [
   { label: "Equipamentos", href: "#equipamentos" },
   { label: "Combos", href: "#combos" },
   { label: "Frotas & Pesados", href: "#frotas" },
+  { label: "Lord Sistem", href: "#lord-sistem" },
   { label: "Adicionais", href: "#adicionais" },
   { label: "FAQ", href: "/faq" },
 ];
@@ -113,6 +117,28 @@ const extras = [
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [quickContactOpen, setQuickContactOpen] = useState(false);
+  const [welcomeOpen, setWelcomeOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (!sessionStorage.getItem("lordtracker-welcome-seen")) {
+        const timer = setTimeout(() => setWelcomeOpen(true), 600);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      setWelcomeOpen(true);
+    }
+  }, []);
+
+  const closeWelcome = () => {
+    setWelcomeOpen(false);
+    try {
+      sessionStorage.setItem("lordtracker-welcome-seen", "1");
+    } catch {
+      /* ignore */
+    }
+  };
   const contactLink = useMemo(
     () =>
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
