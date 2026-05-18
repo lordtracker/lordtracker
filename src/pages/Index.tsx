@@ -225,6 +225,15 @@ const Index = () => {
                   {item.label}
                 </a>
               ))}
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2 rounded-md px-3 py-3 text-sm text-primary hover:bg-secondary"
+              >
+                <Instagram className="size-4" /> Instagram @lord.tracker
+              </a>
             </div>
           </div>
         )}
