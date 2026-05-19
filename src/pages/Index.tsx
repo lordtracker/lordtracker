@@ -575,38 +575,49 @@ const Index = () => {
       )}
 
       {welcomeOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Boas-vindas Lord Tracker">
-          <div className="relative w-full max-w-md overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech">
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center overflow-y-auto bg-black/85 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Boas-vindas Lord Tracker"
+          onClick={closeWelcome}
+        >
+          <div
+            className="relative my-auto flex max-h-[92vh] w-full max-w-xs flex-col overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech sm:max-w-sm"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
               onClick={closeWelcome}
-              className="absolute right-3 top-3 z-10 flex size-9 items-center justify-center rounded-md border border-border bg-background/80 text-foreground backdrop-blur transition hover:bg-background"
+              className="absolute right-2 top-2 z-10 flex size-9 items-center justify-center rounded-md border border-border bg-background/90 text-foreground backdrop-blur transition hover:bg-background"
               aria-label="Fechar boas-vindas"
             >
               <X className="size-4" />
             </button>
-            <img
-              src={welcomePost}
-              alt="Caso real: motocicleta roubada às 14:00 e recuperada às 14:13 pela equipe Lord Tracker"
-              className="block h-auto w-full object-contain"
-              loading="eager"
-            />
-            <div className="space-y-3 p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Bem-vindo à Lord Tracker</p>
-              <h2 className="text-2xl font-black leading-tight">Resposta em minutos. Tecnologia que recupera.</h2>
-              <p className="text-sm leading-6 text-muted-foreground">
-                Veja como nossa equipe de pronta resposta atua para proteger seu patrimônio. Fale agora com a gente e proteja seu veículo.
-              </p>
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <Button asChild variant="hero" className="flex-1">
-                  <a href={contactLink} target="_blank" rel="noreferrer" onClick={closeWelcome}>
-                    Quero proteger meu veículo <ArrowRight />
-                  </a>
-                </Button>
-                <Button variant="dark" className="flex-1" onClick={closeWelcome}>
-                  Explorar o site
-                </Button>
+            <div className="overflow-y-auto">
+              <img
+                src={welcomePost}
+                alt="Caso real: motocicleta roubada às 14:00 e recuperada às 14:13 pela equipe Lord Tracker"
+                className="block max-h-[45vh] w-full object-contain"
+                loading="eager"
+              />
+              <div className="space-y-2 p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary">Bem-vindo à Lord Tracker</p>
+                <h2 className="text-lg font-black leading-tight">Resposta em minutos. Tecnologia que recupera.</h2>
+                <p className="text-xs leading-5 text-muted-foreground">
+                  Veja como nossa equipe de pronta resposta atua para proteger seu patrimônio.
+                </p>
               </div>
+            </div>
+            <div className="flex flex-col gap-2 border-t border-border bg-surface-strong p-3 sm:flex-row">
+              <Button asChild variant="hero" size="sm" className="flex-1">
+                <a href={contactLink} target="_blank" rel="noreferrer" onClick={closeWelcome}>
+                  Proteger meu veículo <ArrowRight />
+                </a>
+              </Button>
+              <Button variant="dark" size="sm" className="flex-1" onClick={closeWelcome}>
+                Explorar o site
+              </Button>
             </div>
           </div>
         </div>
