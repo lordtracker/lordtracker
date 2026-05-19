@@ -242,11 +242,22 @@ const Index = () => {
         {menuOpen && (
           <div className="border-t border-border bg-surface-strong px-4 py-4 lg:hidden">
             <div className="mx-auto grid max-w-7xl gap-2">
-              {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground">
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.clientArea ? (
+                  <button
+                    key={item.href}
+                    type="button"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-2 rounded-md px-3 py-3 text-left text-sm text-primary hover:bg-secondary"
+                  >
+                    <LogIn className="size-4" /> {item.label}
+                  </button>
+                ) : (
+                  <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground">
+                    {item.label}
+                  </a>
+                ),
+              )}
               <a
                 href={instagramUrl}
                 target="_blank"
