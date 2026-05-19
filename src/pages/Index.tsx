@@ -187,14 +187,33 @@ const Index = () => {
           </a>
 
           <div className="hidden items-center gap-1 lg:flex">
-            {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.clientArea ? (
+                <button
+                  key={item.href}
+                  type="button"
+                  className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm text-primary transition-colors hover:bg-secondary hover:text-foreground"
+                  title="Em breve: acesso ao software de monitoramento"
+                >
+                  <LogIn className="size-4" /> {item.label}
+                </button>
+              ) : (
+                <a key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+                  {item.label}
+                </a>
+              ),
+            )}
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
+            <button
+              type="button"
+              aria-label="Área do Cliente (em breve)"
+              title="Área do Cliente — em breve"
+              className="inline-flex size-9 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary transition-colors hover:bg-primary/20 hover:text-foreground"
+            >
+              <LogIn className="size-4" />
+            </button>
             <a
               href={instagramUrl}
               target="_blank"
