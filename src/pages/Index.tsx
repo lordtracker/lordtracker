@@ -11,6 +11,7 @@ import {
   Factory,
   Menu,
   Instagram,
+  LogIn,
   MessageCircle,
   MonitorSmartphone,
   RadioTower,
