@@ -29,7 +29,7 @@ import {
 import lordTrackerLogo from "@/assets/lord-tracker-logo.png";
 import appMapImage from "@/assets/lord-tracker-app-map.png";
 import welcomePost from "@/assets/welcome-post.png";
-import lordSistemLogo from "@/assets/lord-sistem-logo.png";
+import lordSistemLogo from "@/assets/lord-sistem-logo-clean.png";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
