@@ -43,6 +43,7 @@ const navItems = [
   { label: "Frotas & Pesados", href: "#frotas" },
   { label: "Lord Sistem", href: "#lord-sistem" },
   { label: "Adicionais", href: "#adicionais" },
+  { label: "Área do Cliente", href: "#area-cliente", clientArea: true },
   { label: "FAQ", href: "/faq" },
 ];
 
