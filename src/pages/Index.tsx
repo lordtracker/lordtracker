@@ -35,6 +35,7 @@ import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
 const instagramUrl = "https://www.instagram.com/lord.tracker?igsh=dnVnNXJkYjM0NGYz";
+const clientAreaUrl = "https://sistemalt.lordtracker.com.br/";
 
 const navItems: { label: string; href: string; clientArea?: boolean }[] = [
   { label: "Início", href: "#inicio" },
