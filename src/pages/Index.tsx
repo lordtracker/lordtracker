@@ -249,14 +249,16 @@ const Index = () => {
             <div className="mx-auto grid max-w-7xl gap-2">
               {navItems.map((item) =>
                 item.clientArea ? (
-                  <button
+                  <a
                     key={item.href}
-                    type="button"
+                    href={clientAreaUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     onClick={() => setMenuOpen(false)}
                     className="flex items-center gap-2 rounded-md px-3 py-3 text-left text-sm text-primary hover:bg-secondary"
                   >
                     <LogIn className="size-4" /> {item.label}
-                  </button>
+                  </a>
                 ) : (
                   <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground">
                     {item.label}
