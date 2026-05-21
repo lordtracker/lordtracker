@@ -209,14 +209,16 @@ const Index = () => {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <button
-              type="button"
-              aria-label="Área do Cliente (em breve)"
-              title="Área do Cliente — em breve"
+            <a
+              href={clientAreaUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Área do Cliente"
+              title="Área do Cliente"
               className="inline-flex size-9 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary transition-colors hover:bg-primary/20 hover:text-foreground"
             >
               <LogIn className="size-4" />
-            </button>
+            </a>
             <a
               href={instagramUrl}
               target="_blank"
