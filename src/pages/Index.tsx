@@ -622,7 +622,7 @@ const Index = () => {
           onClick={closeWelcome}
         >
           <div
-            className="relative my-auto flex max-h-[92vh] w-full max-w-xs flex-col overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech sm:max-w-sm"
+            className="relative my-auto flex max-h-[92vh] w-full max-w-sm flex-col overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech sm:max-w-md"
             onClick={(e) => e.stopPropagation()}
           >
             <button
