@@ -190,14 +190,16 @@ const Index = () => {
           <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) =>
               item.clientArea ? (
-                <button
+                <a
                   key={item.href}
-                  type="button"
+                  href={clientAreaUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm text-primary transition-colors hover:bg-secondary hover:text-foreground"
-                  title="Em breve: acesso ao software de monitoramento"
+                  title="Acessar área do cliente"
                 >
                   <LogIn className="size-4" /> {item.label}
-                </button>
+                </a>
               ) : (
                 <a key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
                   {item.label}
