@@ -35,6 +35,7 @@ import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "5519998438210";
 const instagramUrl = "https://www.instagram.com/lord.tracker?igsh=dnVnNXJkYjM0NGYz";
+const clientAreaUrl = "https://sistemalt.lordtracker.com.br/";
 
 const navItems: { label: string; href: string; clientArea?: boolean }[] = [
   { label: "Início", href: "#inicio" },
@@ -189,14 +190,16 @@ const Index = () => {
           <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) =>
               item.clientArea ? (
-                <button
+                <a
                   key={item.href}
-                  type="button"
+                  href={clientAreaUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm text-primary transition-colors hover:bg-secondary hover:text-foreground"
-                  title="Em breve: acesso ao software de monitoramento"
+                  title="Acessar área do cliente"
                 >
                   <LogIn className="size-4" /> {item.label}
-                </button>
+                </a>
               ) : (
                 <a key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
                   {item.label}
@@ -206,14 +209,16 @@ const Index = () => {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <button
-              type="button"
-              aria-label="Área do Cliente (em breve)"
-              title="Área do Cliente — em breve"
+            <a
+              href={clientAreaUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Área do Cliente"
+              title="Área do Cliente"
               className="inline-flex size-9 items-center justify-center rounded-md border border-primary/35 bg-primary/10 text-primary transition-colors hover:bg-primary/20 hover:text-foreground"
             >
               <LogIn className="size-4" />
-            </button>
+            </a>
             <a
               href={instagramUrl}
               target="_blank"
@@ -244,14 +249,16 @@ const Index = () => {
             <div className="mx-auto grid max-w-7xl gap-2">
               {navItems.map((item) =>
                 item.clientArea ? (
-                  <button
+                  <a
                     key={item.href}
-                    type="button"
+                    href={clientAreaUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     onClick={() => setMenuOpen(false)}
                     className="flex items-center gap-2 rounded-md px-3 py-3 text-left text-sm text-primary hover:bg-secondary"
                   >
                     <LogIn className="size-4" /> {item.label}
-                  </button>
+                  </a>
                 ) : (
                   <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground">
                     {item.label}
@@ -615,7 +622,7 @@ const Index = () => {
           onClick={closeWelcome}
         >
           <div
-            className="relative my-auto flex max-h-[92vh] w-full max-w-xs flex-col overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech sm:max-w-sm"
+            className="relative my-auto flex max-h-[92vh] w-full max-w-sm flex-col overflow-hidden rounded-lg border border-primary/35 bg-surface-strong shadow-tech sm:max-w-md"
             onClick={(e) => e.stopPropagation()}
           >
             <button
