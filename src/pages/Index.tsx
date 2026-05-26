@@ -20,6 +20,7 @@ import {
   ShieldAlert,
   Smartphone,
   Sparkles,
+  Star,
   Truck,
   Tv,
   Video,
