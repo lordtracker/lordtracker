@@ -145,8 +145,23 @@ All colors MUST be HSL.
     background: var(--gradient-accent);
   }
 
+  .bg-gold-tech {
+    background: var(--gradient-gold);
+  }
+
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .shadow-tech {
     box-shadow: var(--shadow-tech);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
   .shadow-warning {
