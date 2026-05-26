@@ -553,6 +553,51 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="depoimentos" className="relative overflow-hidden border-y border-gold/30 bg-surface-strong px-4 py-20 sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" style={{ background: "radial-gradient(circle at 15% 20%, hsl(var(--gold) / 0.18), transparent 45%), radial-gradient(circle at 85% 80%, hsl(var(--primary) / 0.12), transparent 45%)" }} />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col gap-4 sm:items-center sm:text-center">
+            <p className="inline-flex items-center gap-2 self-start rounded-md border border-gold/35 bg-gold/10 px-3 py-2 text-sm font-bold uppercase tracking-[0.22em] text-gold sm:self-center">
+              <Star className="size-4 fill-gold" /> Depoimentos
+            </p>
+            <h2 className="text-3xl font-black sm:text-5xl">
+              Quem confia na <span className="text-gold-gradient">Lord Tracker</span> recomenda.
+            </h2>
+            <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+              Histórias reais de clientes que tiveram suas operações transformadas pela nossa tecnologia, presença local e prontidão.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {testimonials.map((item) => (
+              <article
+                key={item.name}
+                className="group relative flex flex-col gap-5 rounded-md border border-border bg-panel-tech p-6 shadow-tech transition-all hover:-translate-y-1 hover:border-gold/50 hover:shadow-gold sm:p-7"
+              >
+                <div className="flex items-center gap-1" aria-label="Avaliação 5 de 5 estrelas">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-gold text-gold" />
+                  ))}
+                </div>
+                <p className="text-base leading-7 text-foreground/90 sm:text-lg">
+                  <span className="mr-1 select-none text-2xl font-black leading-none text-gold-gradient">“</span>
+                  {item.text}
+                </p>
+                <div className="mt-auto flex items-center gap-4 border-t border-border/70 pt-4">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gold-tech text-base font-black text-gold-foreground shadow-gold">
+                    {item.initials}
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">{item.name}</p>
+                    <p className="text-sm text-muted-foreground">{item.role}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="adicionais" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">Adicionais</p>
