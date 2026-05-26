@@ -44,9 +44,37 @@ const navItems: { label: string; href: string; clientArea?: boolean }[] = [
   { label: "Combos", href: "#combos" },
   { label: "Frotas & Pesados", href: "#frotas" },
   { label: "Lord Sistem", href: "#lord-sistem" },
+  { label: "Depoimentos", href: "#depoimentos" },
   { label: "Adicionais", href: "#adicionais" },
   { label: "Área do Cliente", href: "#area-cliente", clientArea: true },
   { label: "FAQ", href: "/faq" },
+];
+
+const testimonials = [
+  {
+    name: "Rodrigo Almeida",
+    role: "Motociclista — Campinas/SP",
+    initials: "RA",
+    text: "Tive minha moto furtada no centro e em 13 minutos a equipe da Lord Tracker já tinha localizado e recuperado. Tecnologia e pronta resposta de verdade — sem eles, eu jamais teria a moto de volta.",
+  },
+  {
+    name: "Patrícia Mendes",
+    role: "Gestora de frota — Logística PM",
+    initials: "PM",
+    text: "Depois que instalamos o sistema em toda a frota, a economia em combustível, manutenção e horas extras passou de 22%. Os relatórios e a telemetria mudaram completamente a forma como gerimos nossos veículos.",
+  },
+  {
+    name: "Carlos Eduardo Souza",
+    role: "Empresário — Valinhos/SP",
+    initials: "CE",
+    text: "Já pesquisei várias empresas antes de fechar. A Lord Tracker tem preço justo, atendimento próximo e tecnologia de ponta. É o melhor custo-benefício que encontrei na região.",
+  },
+  {
+    name: "Juliana Ribeiro",
+    role: "Cliente particular — Hortolândia/SP",
+    initials: "JR",
+    text: "O app é intuitivo, as notificações chegam em tempo real e o suporte responde rapidíssimo no WhatsApp. Me sinto muito mais segura sabendo que meu carro está monitorado 24 horas.",
+  },
 ];
 
 const stats = [
