@@ -52,6 +52,12 @@ export default {
         steel: "hsl(var(--steel))",
         electric: "hsl(var(--electric))",
         graphite: "hsl(var(--graphite))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
+          deep: "hsl(var(--gold-deep))",
+          foreground: "hsl(var(--gold-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

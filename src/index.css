@@ -48,12 +48,18 @@ All colors MUST be HSL.
     --electric: 59 100% 56%;
     --graphite: 220 7% 10%;
     --hero-glow: 59 100% 56%;
-    --gradient-hero: radial-gradient(circle at 78% 18%, hsl(var(--primary) / 0.26), transparent 32%), radial-gradient(circle at 18% 12%, hsl(var(--primary) / 0.15), transparent 24%), linear-gradient(135deg, hsl(0 0% 2%) 0%, hsl(220 8% 8%) 48%, hsl(0 0% 0%) 100%);
+    --gold: 42 68% 54%;
+    --gold-soft: 44 72% 66%;
+    --gold-deep: 36 58% 36%;
+    --gold-foreground: 220 24% 6%;
+    --gradient-hero: radial-gradient(circle at 78% 18%, hsl(var(--primary) / 0.26), transparent 32%), radial-gradient(circle at 18% 12%, hsl(var(--gold) / 0.18), transparent 30%), radial-gradient(circle at 18% 12%, hsl(var(--primary) / 0.12), transparent 24%), linear-gradient(135deg, hsl(0 0% 2%) 0%, hsl(220 8% 8%) 48%, hsl(0 0% 0%) 100%);
     --gradient-panel: linear-gradient(145deg, hsl(var(--surface-elevated) / 0.94), hsl(var(--surface) / 0.86));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(52 100% 44%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-soft)) 0%, hsl(var(--gold)) 45%, hsl(var(--gold-deep)) 100%);
     --shadow-tech: 0 24px 80px -32px hsl(var(--primary) / 0.58);
+    --shadow-gold: 0 22px 70px -30px hsl(var(--gold) / 0.55);
     --shadow-warning: 0 18px 58px -28px hsl(var(--accent) / 0.9);
-    --grid-location: linear-gradient(hsl(var(--primary) / 0.12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    --grid-location: linear-gradient(hsl(var(--primary) / 0.12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold) / 0.1) 1px, transparent 1px);
 
     --sidebar-background: 0 0% 98%;
 
@@ -139,8 +145,23 @@ All colors MUST be HSL.
     background: var(--gradient-accent);
   }
 
+  .bg-gold-tech {
+    background: var(--gradient-gold);
+  }
+
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .shadow-tech {
     box-shadow: var(--shadow-tech);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
   .shadow-warning {
