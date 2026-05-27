@@ -60,7 +60,7 @@ const testimonials = [
   },
   {
     name: "Patrícia Mendes",
-    role: "Gestora de frota — Logística PM",
+    role: "Gestora de frota — DBO",
     initials: "PM",
     text: "Depois que instalamos o sistema em toda a frota, a economia em combustível, manutenção e horas extras passou de 22%. Os relatórios e a telemetria mudaram completamente a forma como gerimos nossos veículos.",
   },
