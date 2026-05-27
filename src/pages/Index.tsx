@@ -60,7 +60,7 @@ const testimonials = [
   },
   {
     name: "Patrícia Mendes",
-    role: "Gestora de frota — Logística PM",
+    role: "Gestora de frota — DBO",
     initials: "PM",
     text: "Depois que instalamos o sistema em toda a frota, a economia em combustível, manutenção e horas extras passou de 22%. Os relatórios e a telemetria mudaram completamente a forma como gerimos nossos veículos.",
   },
@@ -212,7 +212,7 @@ const Index = () => {
             <img
               src={lordTrackerLogo}
               alt="Logo Lord Tracker Rastreamento Veicular"
-              className="h-16 w-auto max-w-[230px] object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-20 sm:max-w-[300px] lg:h-24 lg:max-w-[360px]"
+              className="h-16 w-auto max-w-[230px] object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-20 sm:max-w-[300px] lg:h-14 lg:max-w-[200px]"
             />
           </a>
 
