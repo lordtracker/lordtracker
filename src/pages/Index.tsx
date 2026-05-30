@@ -182,6 +182,12 @@ const Index = () => {
     [],
   );
 
+  const trackConversion = () => {
+    if (typeof window !== "undefined" && typeof (window as any).trackLordConversion === "function") {
+      (window as any).trackLordConversion();
+    }
+  };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -189,6 +195,7 @@ const Index = () => {
     const phone = String(formData.get("phone") ?? "").trim().slice(0, 30);
     const vehicle = String(formData.get("vehicle") ?? "").trim().slice(0, 80);
     const message = `Olá, sou ${name || "cliente"}. Telefone: ${phone || "não informado"}. Veículo/frota: ${vehicle || "não informado"}. Quero uma cotação Lord Tracker.`;
+    trackConversion();
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
@@ -200,6 +207,7 @@ const Index = () => {
     const vehicles = String(formData.get("quickVehicles") ?? "").trim().slice(0, 40);
     const email = String(formData.get("quickEmail") ?? "").trim().slice(0, 120);
     const message = `Olá, quero falar com a Lord Tracker. Nome: ${name || "não informado"}. WhatsApp: ${phone || "não informado"}. Quantidade de veículos: ${vehicles || "não informado"}. E-mail: ${email || "não informado"}.`;
+    trackConversion();
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setQuickContactOpen(false);
   };
