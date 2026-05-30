@@ -266,7 +266,7 @@ const Index = () => {
               <Instagram className="size-4" />
             </a>
             <Button asChild variant="tech" size="sm">
-              <a href={contactLink} target="_blank" rel="noreferrer">
+              <a href={contactLink} target="_blank" rel="noreferrer" onClick={trackConversion}>
                 <MessageCircle /> WhatsApp
               </a>
             </Button>
@@ -339,7 +339,7 @@ const Index = () => {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="xl">
-                <a href={contactLink} target="_blank" rel="noreferrer">
+                <a href={contactLink} target="_blank" rel="noreferrer" onClick={trackConversion}>
                   Solicitar cotação <ArrowRight />
                 </a>
               </Button>
@@ -485,7 +485,7 @@ const Index = () => {
                   ))}
                 </ul>
                 <Button asChild variant={index === 1 || index === 3 ? "hero" : "tech"} className="mt-7 w-full">
-                  <a href={contactLink} target="_blank" rel="noreferrer">Contratar combo</a>
+                  <a href={contactLink} target="_blank" rel="noreferrer" onClick={trackConversion}>Contratar combo</a>
                 </Button>
               </article>
             ))}
@@ -535,7 +535,7 @@ const Index = () => {
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="xl">
-                <a href={contactLink} target="_blank" rel="noreferrer">
+                <a href={contactLink} target="_blank" rel="noreferrer" onClick={trackConversion}>
                   Quero ser avisado <ArrowRight />
                 </a>
               </Button>
@@ -732,7 +732,7 @@ const Index = () => {
             </div>
             <div className="flex flex-col gap-2 border-t border-border bg-surface-strong p-3 sm:flex-row">
               <Button asChild variant="hero" size="sm" className="flex-1">
-                <a href={contactLink} target="_blank" rel="noreferrer" onClick={closeWelcome}>
+                <a href={contactLink} target="_blank" rel="noreferrer" onClick={() => { trackConversion(); closeWelcome(); }}>
                   Proteger meu veículo <ArrowRight />
                 </a>
               </Button>
